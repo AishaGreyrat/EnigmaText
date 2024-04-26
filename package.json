@@ -7,9 +7,14 @@
   "version": "1.0.0",
   "description": "Proyecto parcial de la materia Aplicaciones de Bases de Datos",
   "main": "server.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "sass": "^1.75.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass styles/sass/styles.sass:public/css/styles.css",
+    "sass-watch": "sass --watch styles/sass/styles.sass:public/css/styles.css",
+    "start": "npm run sass && nodemon server.js"
   },
   "repository": {
     "type": "git",
