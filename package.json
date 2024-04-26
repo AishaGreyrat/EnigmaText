@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+    "pug": "^3.0.2"
+  },
+  "name": "enigmatext",
+  "version": "1.0.0",
+  "description": "Proyecto parcial de la materia Aplicaciones de Bases de Datos",
+  "main": "server.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AishaGreyrat/EnigmaText.git"
+  },
+  "keywords": [
+    "proyecto",
+    "universitario",
+    "pug"
+  ],
+  "author": "Brito Argáez José Raúl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AishaGreyrat/EnigmaText/issues"
+  },
+  "homepage": "https://github.com/AishaGreyrat/EnigmaText#readme"
+}
