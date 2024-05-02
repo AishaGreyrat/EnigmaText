@@ -1,10 +1,11 @@
-// layout.pug
 doctype html
 html
   head
     title #{title}
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel='stylesheet', href='/css/styles.css')
-    link(rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200')
+    
   body
     nav
       ul
@@ -14,5 +15,9 @@ html
           li
             a(href='/logout')
               i(class='material-symbols-rounded') logout
+        else
+          li
+            a(href='/login')
+              i(class='material-symbols-rounded') login
     .container
       block content

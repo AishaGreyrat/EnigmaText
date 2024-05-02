@@ -1,16 +1,8 @@
 {
-  "dependencies": {
-    "express": "^4.19.2",
-    "pug": "^3.0.2"
-  },
   "name": "enigmatext",
   "version": "1.0.0",
   "description": "Proyecto parcial de la materia Aplicaciones de Bases de Datos",
   "main": "server.js",
-  "devDependencies": {
-    "nodemon": "^3.1.0",
-    "sass": "^1.75.0"
-  },
   "scripts": {
     "sass": "sass styles/sass/styles.sass:public/css/styles.css",
     "sass-watch": "sass --watch styles/sass/styles.sass:public/css/styles.css",
@@ -20,15 +12,20 @@
     "type": "git",
     "url": "git+https://github.com/AishaGreyrat/EnigmaText.git"
   },
-  "keywords": [
-    "proyecto",
-    "universitario",
-    "pug"
-  ],
   "author": "Brito Argáez José Raúl",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/AishaGreyrat/EnigmaText/issues"
   },
-  "homepage": "https://github.com/AishaGreyrat/EnigmaText#readme"
+  "homepage": "https://github.com/AishaGreyrat/EnigmaText#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "mysql2": "^3.9.7",
+    "nodemon": "^3.1.0",
+    "pug": "^3.0.2",
+    "sass": "^1.75.0"
+  }
 }
