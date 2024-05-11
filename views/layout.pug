@@ -2,22 +2,27 @@ doctype html
 html
   head
     title #{title}
-    meta(charset="UTF-8")
+    meta(charset='UTF-8')
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel='stylesheet', href='/css/styles.css')
-    
   body
     nav
       ul
-        li
-          a(href='/') Inicio
+        li(class='izquierda')
+          a(href='/')
+            img(class="logo", src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGxAnDl12_31tQeNFWefs3RjODU5yBEy9WE99UnzFZAw&s")
         if user != ''
-          li
-            a(href='/logout')
-              i(class='material-symbols-rounded') logout
+          .derecha
+            li 
+              a(href="#")
+                h1 Prueba 
+            li
+              a(href='/logout')
+                i(class='material-symbols-outlined') logout 
         else
-          li
-            a(href='/login')
-              i(class='material-symbols-rounded') login
-    .container
-      block content
+          li(class='derecha')
+            a(href='/login', id='loginBtn')
+              i(class='material-symbols-outlined') login
+.container
+  block content
+

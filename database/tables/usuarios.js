@@ -1,10 +1,10 @@
-const { obtenerConexion } = require('../connection');
+const { obtenerConexion } = require('../conexion');
 
-// Función para insertar un nuevo usuario en la base de datos MySQL
-async function registrar(nombre, email, password) {
+// Función para insertar un nuevo usuario en la base de datos MySQL usando la pool, osea quitando codigo innecesario ya que la pool se encarga de cargar y de liberar las conexiobnes cuando ya no se usan
+async function registrar(nombre, email, contraseña) {
     const conexion = await obtenerConexion();
     try {
-        await conexion.query('INSERT INTO usuarios (nombre, email, password_hash) VALUES (?, ?, ?)', [nombre, email, password]);
+        await conexion.query('INSERT INTO usuarios (nombre, email, contraseña) VALUES (?, ?, ?)', [nombre, email, contraseña]);
         console.log('Usuario insertado correctamente');
     } catch (error) {
         console.error('Error al insertar usuario:', error);
@@ -28,6 +28,7 @@ async function obtenerPorNombre(nombre) {
     }
 }
 
+
 // Función para obtener un usuario por su ID
 async function obtenerPorId(id) {
     const conexion = await obtenerConexion();
@@ -42,8 +43,10 @@ async function obtenerPorId(id) {
     }
 }
 
+
+
 module.exports = {
     registrar,
     obtenerPorNombre,
-    obtenerPorId
+    obtenerPorId,
 };

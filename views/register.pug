@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h2 Registrarse
+  form(action='/registrar-usuario', method='POST')
+
+    label(for='nombre') Nombre:
+    input(type='text', name='nombre', id='nombre', required)
+
+    label(for='email') Correo Electrónico:
+    input(type='email', name='email', id='email', required)
+
+    label(for='password') Contraseña:
+    input(type='password', name='password', id='password', required)
+
+    label(for='confirmPassword') Confirmar Contraseña:
+    input(type='password', name='confirmPassword', id='confirmPassword', required)
+
+    input(type='submit', value='Registrarse')
+  p ¿Ya tienes una cuenta? 
+    a(href='/login', id='loginBtn' class="LoginBtn") Iniciar Sesión

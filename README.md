@@ -4,7 +4,7 @@ Proyecto mmlon para mi profe favorito Joshua
 # Verificar el estado de tus cambios locales
 git status
 
-# Agregar los archivos modificados a tu área de preparación
+# Agregar los archivos modificados a tu Ã¡rea de preparaciÃ³n
 git add .
 
 # Confirmar los cambios con un mensaje descriptivo
@@ -13,7 +13,7 @@ git commit -m "Mensaje del commit"
 # Asegurarte de estar en la rama correcta
 git checkout main
 
-# Descargar cualquier cambio nuevo del repositorio remoto
+# Descargar cualquier cambio nuevo del repositorio remoto  // opcional
 git pull origin main
 
 # Enviar tus cambios al repositorio remoto en GitHub
@@ -31,7 +31,7 @@ npm init
 
 npm install sass nodemon pug express
 
-# Agrega un archivo específico
+# Agrega un archivo especï¿½fico
 
 git remote add origin <URL_del_repositorio_remoto>
 
