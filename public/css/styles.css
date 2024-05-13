@@ -1,15 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0");
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap");
 .material-symbols-rounded {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
 .material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+.signika-negative-font {
+  font-family: "Signika Negative", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 body {
   font-size: 16px;
-  background: rgba(194, 166, 246, 0.7647058824);
+  background: rgba(239, 239, 239, 0.7647058824);
 }
 
 .logo {
@@ -84,10 +92,6 @@ li a {
 
 .izquierda .derecha {
   size: 25px;
-}
-
-.material-symbols-outlined {
-  font-size: 40px;
 }
 
 .modal {

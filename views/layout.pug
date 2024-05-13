@@ -5,24 +5,33 @@ html
     meta(charset='UTF-8')
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel='stylesheet', href='/css/styles.css')
-  body
+    each scriptPath in scripts
+      script(src=scriptPath)
+  body.signika-negative-font
     nav
       ul
         li(class='izquierda')
           a(href='/')
             img(class="logo", src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGxAnDl12_31tQeNFWefs3RjODU5yBEy9WE99UnzFZAw&s")
+
         if user != ''
           .derecha
-            li 
-              a(href="#")
-                h1 Prueba 
             li
               a(href='/logout')
                 i(class='material-symbols-outlined') logout 
         else
-          li(class='derecha')
-            a(href='/login', id='loginBtn')
-              i(class='material-symbols-outlined') login
+          .derecha
+            li
+              a(href='/login', id='loginBtn')
+                i(class='material-symbols-outlined') login
+        .derecha
+          li 
+            a#openModalBtn(href='#')
+              h1 Creditos
+          li 
+            a(href="/historial")
+              h1 Historial 
 .container
   block content
 
+include creditos

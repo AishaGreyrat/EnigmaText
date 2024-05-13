@@ -2,6 +2,8 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const dotenv = require('dotenv');
+const path = require('path');
+const fs = require('fs');
 
 //Configura DotEnv
 dotenv.config();
@@ -22,7 +24,8 @@ async function authenticate(req, res, next) {
         // Almacena el ID del usuario en la solicitud para su posterior uso
         req.userId = decoded.userId;
 
-        next();
+        // Verificar créditos para usuarios no autenticados
+        verificarCreditos(req, res, next);
 
     } catch (err) {
         // Si hay un error en la verificación del token, redirige al usuario al login
@@ -52,9 +55,33 @@ async function comparePassword(passwordString, bdHash) {
 }
 
 
+function cargarScripts(req, res, next) {
+    // Ruta de la carpeta de scripts
+    const scriptsFolder = path.join(__dirname, '../public/js');
+
+    // Escanear la carpeta de scripts
+    fs.readdir(scriptsFolder, (err, files) => {
+        if (err) {
+            console.error('Error al leer la carpeta de scripts:', err);
+            return next();
+        }
+
+        // Filtrar solo los archivos JavaScript
+        const jsFiles = files.filter(file => path.extname(file) === '.js');
+
+        // Agregar las rutas de los scripts a la variable locals
+        res.locals.scripts = jsFiles.map(file => `/js/${file}`);
+
+        next();
+    });
+}
+
+
+
 module.exports = {
     authenticate,
     generateToken,
     getHash,
-    comparePassword
+    comparePassword,
+    cargarScripts
 };

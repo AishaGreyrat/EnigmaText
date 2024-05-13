@@ -1,4 +1,4 @@
-const { obtenerConexion } = require('../conexion');
+const { obtenerConexion } = require('../database/conexion');
 
 // Función para insertar un nuevo usuario en la base de datos MySQL usando la pool, osea quitando codigo innecesario ya que la pool se encarga de cargar y de liberar las conexiobnes cuando ya no se usan
 async function registrar(nombre, email, contraseña) {
@@ -9,8 +9,6 @@ async function registrar(nombre, email, contraseña) {
     } catch (error) {
         console.error('Error al insertar usuario:', error);
         throw error;
-    } finally {
-        conexion.release(); // Liberar la conexión al finalizar
     }
 }
 
@@ -23,8 +21,6 @@ async function obtenerPorNombre(nombre) {
     } catch (error) {
         console.error('Error al obtener usuario por nombre:', error);
         throw error;
-    } finally {
-        conexion.release(); // Liberar la conexión al finalizar
     }
 }
 
@@ -38,8 +34,6 @@ async function obtenerPorId(id) {
     } catch (error) {
         console.error('Error al obtener usuario por ID:', error);
         throw error;
-    } finally {
-        conexion.release(); // Liberar la conexión al finalizar
     }
 }
 
