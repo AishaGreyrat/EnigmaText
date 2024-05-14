@@ -23,7 +23,6 @@ router.get('/', async (req, res) => {
         }
         console.log('req.sessionStore.clear finalizado correctamente');
       });
-      carritoCache = {};
       res.clearCookie('token');
       res.redirect('/'); // Redirigir a la página principal
     });

@@ -11,9 +11,10 @@ dotenv.config();
 async function authenticate(req, res, next) {
     // Verifica si hay un token en las cookies de la solicitud
     const token = req.cookies.token;
-
+    
     // Si no hay token, redirige al usuario al login
     if (!token) {
+        console.log("no hay token")
         return res.redirect('/login');
     }
 
@@ -23,20 +24,21 @@ async function authenticate(req, res, next) {
 
         // Almacena el ID del usuario en la solicitud para su posterior uso
         req.userId = decoded.userId;
-
-        // Verificar créditos para usuarios no autenticados
-        verificarCreditos(req, res, next);
+        console.log("token y decoded y userID\n",token, decoded, userId)
 
     } catch (err) {
         // Si hay un error en la verificación del token, redirige al usuario al login
+        console.log("hay un problema con el login xd")
         return res.redirect('/login');
     }
 }
 
 // Función para generar un token JWT
-function generateToken(userId) {
+async function generateToken(userId) {
     // Crea un token con el ID de usuario y una clave secreta
+    console.log('funcion generatetoken',userId);
     return jwt.sign({ userId }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1h' });
+
 }
 
 async function getHash(passwordString) {
@@ -55,26 +57,6 @@ async function comparePassword(passwordString, bdHash) {
 }
 
 
-function cargarScripts(req, res, next) {
-    // Ruta de la carpeta de scripts
-    const scriptsFolder = path.join(__dirname, '../public/js');
-
-    // Escanear la carpeta de scripts
-    fs.readdir(scriptsFolder, (err, files) => {
-        if (err) {
-            console.error('Error al leer la carpeta de scripts:', err);
-            return next();
-        }
-
-        // Filtrar solo los archivos JavaScript
-        const jsFiles = files.filter(file => path.extname(file) === '.js');
-
-        // Agregar las rutas de los scripts a la variable locals
-        res.locals.scripts = jsFiles.map(file => `/js/${file}`);
-
-        next();
-    });
-}
 
 
 
@@ -82,6 +64,5 @@ module.exports = {
     authenticate,
     generateToken,
     getHash,
-    comparePassword,
-    cargarScripts
+    comparePassword
 };

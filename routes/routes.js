@@ -13,6 +13,8 @@ const register = require('./register');
 const registrarUsuario = require('./registrar-usuario');
 const historial = require('./historial');
 const creditos = require('./creditos');
+const cifrar = require('./cifrar');
+const textocifrado = require('./texto-cifrado');
 // const nombre = require('./nombre del js');
 
 
@@ -23,8 +25,10 @@ router.use('/logout', logout);
 router.use('/login', login);
 router.use('/register', register);
 router.use('/registrar-usuario', registrarUsuario);
-router.use('/historial', authMiddleware.authenticate , historial);
+router.use('/historial', historial);
 router.use('/creditos', creditos);
+router.use('/cifrar', cifrar);
+router.use('/texto-cifrado', textocifrado);
 
 
 module.exports = router;

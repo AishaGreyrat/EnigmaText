@@ -1,4 +1,16 @@
-extends layout 
+extends layout
 
-block content 
-    h1 Historial
+block content
+  .container-general
+    .parrafo-caja
+      h1 Historial
+      if historial.length > 0
+          ul#historial
+              each subArray in historial
+                  each entrada in subArray
+                    .textos
+                      li
+                          p Texto Original: #{entrada.texto_original}
+                          p Texto Cifrado: #{entrada.texto_cifrado}
+      else
+          p No hay elementos en el historial

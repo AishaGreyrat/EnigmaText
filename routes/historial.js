@@ -1,10 +1,10 @@
 // routes/historial
 const express = require('express');
 const router = express.Router();
-const authMiddleware = require('../middlewares/authMiddleware');
+const textoController = require('../controllers/cifradoController');
 
-router.get('/', authMiddleware.authenticate, (req, res) => {
-    res.render('historial');
-});
+
+router.get('/', textoController.mostrarHistorial);
+
 
 module.exports = router;

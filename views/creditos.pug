@@ -1,6 +1,9 @@
-.modal
-  .modal-content
-    h2 Tienes 
-      | #{creditos !== undefined ? 'ilimitados' : (creditos || 0)}
-      | créditos
-    button.close Cerrar
+extends layout
+
+block content
+  .container-general
+    h1 Créditos
+      if user 
+        h2 Tienes Creditos Ilimitados
+      else
+        p Tienes #{conversionesRestantes} conversiones restantes.

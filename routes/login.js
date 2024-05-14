@@ -17,8 +17,10 @@ router.post('/', passport.authenticate('local', {
   // Si se autentica correctamente, crea un token JWT
   const token = authMiddleware.generateToken(req.user.id);
 
+  
   res.cookie('token', token, { httpOnly: true, secure: false });
 
+  console.log("se autentifico correctamente el token jwt", token)
   res.redirect('/');
 });
 

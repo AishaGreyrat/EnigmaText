@@ -17,13 +17,18 @@
 
 body {
   font-size: 16px;
-  background: rgba(239, 239, 239, 0.7647058824);
+  background: url("https://static.vecteezy.com/system/resources/previews/000/621/296/large_2x/abstract-elegant-gray-and-white-squares-pattern-background-texture-vector.jpg");
+  margin: 0 auto;
+  padding: 0;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .logo {
-  width: 50px;
+  width: 118px;
   height: auto;
   margin-right: 20px;
+  margin-top: 6px;
 }
 
 .container-general {
@@ -31,18 +36,39 @@ body {
 }
 
 textarea {
-  width: 60%;
+  width: auto;
   height: 150px;
   margin-bottom: 10px;
   resize: none;
+  padding: 12px;
+  border: 2px solid #14a8c7;
+  border-radius: 20px;
+  border-style: inset;
 }
 
-button.boton {
+.boton {
   padding: 10px 20px;
   font-size: 16px;
   display: block;
   margin: auto;
   text-align: center;
+  background: linear-gradient(45deg, #3b679e 0%, #14a8c7 46%, #14a8c7 63%, #7db9e8 100%);
+  border: 2px solid #14a8c7;
+  border-radius: 10px;
+  color: white;
+  font-size: 90%;
+}
+
+.boton:hover {
+  background: linear-gradient(45deg, #3b679e 0%, #11cef5 46%, #17d2f9 63%, #7db9e8 100%);
+}
+
+.material-symbols-outlined {
+  font-size: 18px;
+}
+
+.container-general h1 {
+  margin-top: 7%;
 }
 
 ul {
@@ -57,7 +83,7 @@ nav {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  background-color: #613374;
+  background-color: #14a8c7;
   overflow: hidden;
   padding: 10px 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -65,7 +91,7 @@ nav {
 
 nav li {
   display: inline-block;
-  margin: 10px;
+  margin: 0px;
   margin-left: 44px;
 }
 
@@ -78,8 +104,14 @@ li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 0px 16px;
   text-decoration: none;
+}
+
+li a:hover {
+  text-decoration: none !important;
+  color: #0e4267;
+  border-bottom: 1px dotted #0e4267 !important;
 }
 
 .izquierda {
@@ -94,72 +126,28 @@ li a {
   size: 25px;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 200px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+/* Estilos para los textos */
+.textos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.modal-content {
-  position: relative;
-  background-color: white;
-  margin: auto;
-  padding: 20px;
-  width: 60%;
-  height: auto;
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.5s;
-  animation-name: animatetop;
-  animation-duration: 0.5s;
+.textos p {
+  margin: 5px 0;
 }
 
-.close {
-  color: black;
-  float: right;
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.close:hover, .close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-@-webkit-keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0;
-  }
-  to {
-    top: 0;
-    opacity: 1;
-  }
-}
-@keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0;
-  }
-  to {
-    top: 0;
-    opacity: 1;
-  }
-}
 h2 {
   text-align: center;
+  margin-top: 8%;
 }
 
 form {
   display: grid;
   grid-row-gap: 10px;
+  padding: 5% 0px 4% 0%;
+  width: 50%;
+  margin: 0 auto;
 }
 
 label {
@@ -183,22 +171,68 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 100%;
+  width: 30%;
 }
 input[type=submit]:hover {
   background-color: #45a049;
 }
 
-p {
+.parrafo-caja {
   text-align: center;
   margin-top: 10px;
+  margin: 0 auto;
 }
 
 a {
-  color: blue;
+  color: #c74714;
 }
 a:hover {
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 1210px) {
+  form {
+    padding: 20px 20px 70px;
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 870px) {
+  form {
+    padding: 10px 1px 15px;
+    width: 70%;
+  }
+  .parrafo-caja {
+    width: 70%;
+    margin: 0 auto;
+    padding: 10px 1px 5px;
+  }
+}
+@media only screen and (max-width: 536px) {
+  #creditos {
+    display: none;
+  }
+  nav li {
+    margin-left: 0px;
+  }
+}
+@media only screen and (max-width: 445px) {
+  h1 {
+    font-size: 130%;
+  }
+  form {
+    padding: 10px 1px 15px;
+    width: 100%;
+  }
+  .parrafo-caja {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 1px 5px;
+  }
+}
+@media only screen and (max-width: 384px) {
+  .contenidoif {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

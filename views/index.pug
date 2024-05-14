@@ -2,8 +2,16 @@ extends layout
 
 block content
   .container-general
-    h1 #{title}
-    p Bienvenidos, esta pagina esta hecha para que cualquier persona pueda cifrar textos 
-    textarea.signika-negative-font(id="textoUsuario" placeholder="Escribe tu texto aquí...")
+    .parrafo-caja
+      h1 #{title}
+      p Bienvenidos, esta pagina esta hecha para que cualquier persona pueda cifrar textos 
     
-    button.signika-negative-font(type="submit" class="boton") Boton accion
+    form(action="/cifrar", method='post') 
+      select.signika-negative-font(name='tipoCifrado')
+        each metodo in metodosCifrado
+          option(value=metodo.id)= metodo.nombre  
+      textarea.signika-negative-font(name='textoOriginal' id="textoOriginal" placeholder="Escribe tu texto aquí...")
+      button.signika-negative-font(type="submit" class="boton") Convertir
+
+
+    // Hacer un hover a el textarea
